@@ -1,0 +1,75 @@
+section {
+  &.app-view {
+    width: 262px;
+
+    > header {
+      input {
+        &.new-todo {
+          width: 250px;
+          padding: 4px;
+          font-size: 12pt;
+        }
+      }
+    } /* end header */
+
+    > section {
+      > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 250px;
+
+        li {
+          position:relative;
+          padding-bottom: 5px;
+          margin-bottom:5px;
+          border-bottom: 1px solid #d3d3d3;
+
+          input.edit { display: none; }
+          b { text-decoration: none; }
+          a.destroy {
+            position: absolute;
+            right: 5px;
+            top: 0;
+            display: none;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            background: url('../images/destroy.png') no-repeat;
+          }
+
+          &:last-child { border-bottom: none; }
+          &:hover {
+            a.destroy { display:block; }
+          }
+
+          &.editing {
+            input.edit { display: block; }
+            div.view { display: none; }
+          }
+
+          &.completed {
+            b { text-decoration: line-through; }
+          }
+        }
+
+      }
+    } /* end section */
+
+    > footer {
+      a {
+        &.clear-completed {
+          float: right;
+          line-height: 20px;
+          text-decoration: none;
+          background: rgba(0, 0, 0, 0.1);
+          color: #555555;
+          font-size: 11px;
+          padding: 0 10px 1px;
+          cursor: pointer;
+        }
+      }
+    } /* end footer */
+
+  } /* end .app-view */
+}

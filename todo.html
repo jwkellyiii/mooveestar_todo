@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>MooVeeStar Templates</title>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet/less" type="text/css" href="style/todo.less" />
+    </head>
+    <body>
+        <script type="text/x-tpl" id="app-view">
+            <section id="todoapp" class="app-view">
+                <header id="header">
+                    <h1 data-bind="title"></h1>
+                    <p data-bind="description"></p>
+                    <input id="new-todo" class="new-todo" placeholder="What needs to be done?" autofocus />
+                </header>
+                <section id="main">
+                    <input id="toggle-all" class="toggle-all" type="checkbox">
+                    <label for="toggle-all">Mark all as complete</label>
+
+                    <hr>
+                    <ul id="todo-list"></ul>
+                </section>
+                <footer id="footer"></footer>
+            </section>
+        </script>
+
+        <script type="text/x-tpl" id="item-view">
+            <li data-bind="id" data-bind-id="data-id">
+                <div class="view">
+                    <input type="checkbox" class="toggle" />
+                    <b data-bind="name"></b><br />
+                    <a class="destroy"></a>
+                </div>
+                <input class="edit" type="text" data-bind="name" />
+            </li>
+        </script>
+
+        <script type="text/x-tpl" id="tag">
+            <li></li>
+        </script>
+
+        <script type="text/x-tpl" id="stats-view">
+            <div class="stats-view">
+                <a class="clear-completed">Clear completed</a>
+                <div class="todo-count">
+                    <b data-bind="remaining"></b>
+                    <span data-bind="stats-label"></span>
+                </div>
+            </div>
+        </script>
+
+        <script src="scripts/vendor/less/less-1.4.1.min.js"></script>
+
+        <!-- data-main attribute tells require.js to load scripts/main.js after require.js loads. -->
+        <script data-main="scripts/main" src="scripts/require.js"></script>
+    </body>
+</html>
